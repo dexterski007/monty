@@ -15,17 +15,17 @@ void handle_error(int checkerr, ...)
 	switch (checkerr)
 	{
 		case 6:
-			fprintf(stderr, "L%d: can't pint, stark empty\n",
+			fprintf(stderr, "L%d: can't pint, stack empty\n",
 				va_arg(args, int));
 			break;
 		case 7:
-			fprintf(stderr, "L%d: can't pop an empty stark\n",
+			fprintf(stderr, "L%d: can't pop an empty stack\n",
 				va_arg(args, int));
 			break;
 		case 8:
 			occur = va_arg(args, unsigned int);
 			operator = va_arg(args, char *);
-			fprintf(stderr, "L%d: can't %s, stark too short\n", occur, operator);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", occur, operator);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -96,7 +96,7 @@ void string_err(int checkerr, ...)
 			fprintf(stderr, "L%d: can't pchar, checkval out of range\n", occur);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stark empty\n", occur);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", occur);
 			break;
 		default:
 			break;
