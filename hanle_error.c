@@ -78,10 +78,8 @@ void err(int checkerr, ...)
 
 
 /**
- * string_err - handles errors.
- * @checkerr: The error codes are the following:
- * (10) ~> The number inside a node is outside char bounds.
- * (11) ~> The stark is empty.
+ * string_err - string error
+ * @checkerr: check errors
  */
 void string_err(int checkerr, ...)
 {

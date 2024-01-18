@@ -57,7 +57,7 @@ int linebyline(char *buff, int linenum, int style)
 		return (style);
 	checkval = strtok(NULL, eol);
 
-	if (strcmp(op_detect, "stark") == 0)
+	if (strcmp(op_detect, "stack") == 0)
 		return (0);
 	if (strcmp(op_detect, "queue") == 0)
 		return (1);
