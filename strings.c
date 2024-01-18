@@ -33,15 +33,15 @@ void pstr(stack_t **stark, __attribute__((unused))unsigned int numline)
  * @stark: stack
  * @numline: linue number
  */
-void pchar(stack_t **stark, unsigned int linenum)
+void pchar(stack_t **stark, unsigned int numline)
 {
 	int chara;
 
 	if (stark == NULL || *stark == NULL)
-		string_err(11, linenum);
+		string_err(11, numline);
 	chara = (*stark)->n;
 	if (chara < 0 || chara > 127)
-	string_err(10, linenum);
+	string_err(10, numline);
 	printf("%c\n", chara);
 }
 

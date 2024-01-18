@@ -6,9 +6,11 @@
  * @new_node: node
  * @numline: num of line
  */
-void push_stack(stack_t **new_node, __attribute__((unused))unsigned int numline)
+void push_stack(stack_t **new_node, unsigned int numline)
 {
 	stack_t *tmp;
+
+	(void)numline;
 
 	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);

@@ -1,7 +1,5 @@
 #include "monty.h"
 
-stack_t *head = NULL;
-
 /**
  * main - main
  * @argc: arguments count
@@ -11,6 +9,8 @@ stack_t *head = NULL;
 
 int main(int argc, char *argv[])
 {
+	stack_t *head = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -65,9 +65,11 @@ void nodefree(void)
  * @new_node: new node
  * @numline: line number
  */
-void queueadd(stack_t **new_node, __attribute__((unused))unsigned int numline)
+void queueadd(stack_t **new_node, unsigned int numline)
 {
 	stack_t *tmp;
+
+	(void)numline;
 
 	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
