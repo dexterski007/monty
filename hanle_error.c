@@ -93,7 +93,7 @@ void string_err(int checkerr, ...)
 	switch (checkerr)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, checkval out of range\n", occur);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", occur);
 			break;
 		case 11:
 			fprintf(stderr, "L%d: can't pchar, stack empty\n", occur);
