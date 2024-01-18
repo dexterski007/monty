@@ -127,3 +127,22 @@ void node_mod(stack_t **stark, unsigned int linenum)
 	free((*stark)->prev);
 	(*stark)->prev = NULL;
 }
+
+/**
+ * node_mult - multi noe
+ * @stark: stack
+ * @linenum: number of line
+ */
+void node_mult(stack_t **stark, unsigned int linenum)
+{
+	int sum;
+
+	if (stark == NULL || *stark == NULL || (*stark)->next == NULL)
+		handle_error(8, linenum, "mul");
+
+	(*stark) = (*stark)->next;
+	sum = (*stark)->n * (*stark)->prev->n;
+	(*stark)->n = sum;
+	free((*stark)->prev);
+	(*stark)->prev = NULL;
+}

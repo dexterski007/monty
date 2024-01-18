@@ -1,5 +1,7 @@
 #include "monty.h"
 
+stack_t *head = NULL;
+
 /**
  * main - main
  * @argc: arguments count
@@ -9,8 +11,6 @@
 
 int main(int argc, char *argv[])
 {
-	stack_t *head = NULL;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -87,21 +87,4 @@ void queueadd(stack_t **new_node, unsigned int numline)
 
 }
 
-/**
- * node_mult - multi noe
- * @stark: stack
- * @linenum: number of line
- */
-void node_mult(stack_t **stark, unsigned int linenum)
-{
-	int sum;
 
-	if (stark == NULL || *stark == NULL || (*stark)->next == NULL)
-		handle_error(8, linenum, "mul");
-
-	(*stark) = (*stark)->next;
-	sum = (*stark)->n * (*stark)->prev->n;
-	(*stark)->n = sum;
-	free((*stark)->prev);
-	(*stark)->prev = NULL;
-}
